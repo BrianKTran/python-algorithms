@@ -17,21 +17,20 @@ class Solution:
     # Define the function as 'twoSum' and (set arguments as self, given array and target integer)
     def twoSum(self, nums, target):
         
-        # Define empty array to variable 'ls'
-        ls = []
+        # Define empty array to variable 'indices'
+        indices = []
         # For each integer in array, find length of array from index 0
         for i in range(0, len(nums)):
             # Declare the difference of the target integer and values of the assigned indices in array to variable 'item'
             item = target - nums[i]
-            # Declare string "done" to assigned index in array (does it really do anything?)
-            nums[i] = "done"                                   # seems to cut runtime on 1/2
+         
             # If the difference of the target integer and values of the assigned indices in array is in given array,..
             if item in nums:
-                #... Add the integers in arrat to empty array defined earlier as 'ls'
-                ls.append(i)
+                #... Add the integers in arrat to empty array defined earlier as 'indices'
+                indices.append(i)
                 #... Add given array indices 
                 #  - of the difference of the target integer and assigned index in array 
-                #  - to empty array defined earlier as 'ls'
-                ls.append(nums.index(item))
+                #  - to empty array defined earlier as 'indices'
+                indices.append(nums.index(item))
                 # return the no-longer empty array of indices in which values sum up to be the target integer
-                return ls
+                return indices
